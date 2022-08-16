@@ -1,3 +1,23 @@
+# Nouns-specific
+parts.html
+
+# Harthat
+cache
+artifacts
+typechain
+.openzeppelin
+
+# Coverage result files
+coverage/
+coverage.json
+
+# Foundry
+foundry-out
+foundry-cache
+
+dist
+
+
 # Logs
 logs
 *.log
