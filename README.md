@@ -135,3 +135,13 @@ At this point you should have sufficient context to dive into V2:
 - Read [the docs on V2’s modifications](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV2.sol#L30)
 - Read [the diff](https://gist.github.com/eladmallel/f8ab6b9e5a1bf664666a562b4f6429fd) between [`NounsDAOLogicV2`](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV2.sol) and [`NounsDAOLogicV1`](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV1.sol)
 - Read the [e2e test](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/test/governance/NounsDAO/V2/end2end.test.ts#L255) that demos the upgrade to V2
+
+# Contact info ☎️
+
+We'll be around the C4 Discord. Please let us know if we can help in any way!
+
+| Name       |           Discord |                                          Twitter |
+| :--------- | ----------------: | -----------------------------------------------: |
+| elad       | elad \| ⌐◨-◨#6192 |     [eladmallel](https://twitter.com/eladmallel) |
+| david      |    davidbrai#5671 |       [davidbrai](https://twitter.com/davidbrai) |
+| solimander |   solimander#7468 | [_solimander_](https://twitter.com/_solimander_) |
