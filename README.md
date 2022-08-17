@@ -90,8 +90,8 @@ At this point you should have sufficient context to dive into V2:
 
 We'll be around the C4 Discord. Please let us know if we can help in any way!
 
-| Name       |           Discord |                                          Twitter |
-| :--------- | ----------------: | -----------------------------------------------: |
-| elad       | elad \| ⌐◨-◨#6192 |     [eladmallel](https://twitter.com/eladmallel) |
-| david      |    davidbrai#5671 |       [davidbrai](https://twitter.com/davidbrai) |
-| solimander |   solimander#7468 | [_solimander_](https://twitter.com/_solimander_) |
+| Name       |           Discord |                                          Twitter | Timezone |
+| :--------- | ----------------: | -----------------------------------------------: | -------: |
+| elad       | elad \| ⌐◨-◨#6192 |     [eladmallel](https://twitter.com/eladmallel) |    GMT-5 |
+| david      |    davidbrai#5671 |       [davidbrai](https://twitter.com/davidbrai) |    GMT+2 |
+| solimander |   solimander#7468 | [_solimander_](https://twitter.com/_solimander_) |    GMT-6 |
