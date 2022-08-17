@@ -39,6 +39,22 @@ forge install
 forge test -vvv --ffi
 ```
 
+#### Possible Solc error
+
+If you encounter the following error tring to build or run tests:
+
+```sh
+Solc Error: dyld[32338]: Library not loaded: '/opt/homebrew/opt/z3/lib/libz3.dylib'
+```
+
+Install the z3 library and try again. On MacOs you can run
+
+```sh
+brew install z3
+```
+
+The dependency on z3 is mentioned in [forge build docs](https://book.getfoundry.sh/reference/forge/forge-build#additional-model-checker-settings).
+
 # Audit scope
 
 The focus of this audit is on:
@@ -48,6 +64,7 @@ The focus of this audit is on:
   - Voting gas refund ([spec](https://github.com/nounsDAO/nouns-tech/tree/main/vote-refund))
   - A fix to how `votingDelay` is used ([bug report](https://github.com/nounsDAO/nouns-diligence/blob/main/reports/proposal-58.md#major))
 - Parent contracts which hold state variables: `NounsDAOStorageV2`, `NounsDAOStorageV1Adjusted`, `NounsDAOProxyStorage` (found in the file `NounsDAOInterfaces.sol`)
+- NounsToken's functions `getPriorVotes` and `totalSupply`, which are implemented in `ERC721Checkpointable` and `ERC721Enumerable` respectively
 - The upgrade process from v1 to v2
   - The [NounsDAOLogicV1](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV1.sol) contract for context
   - The upgrade will take place via a proposal; the proposal will include the following transactions:
@@ -61,16 +78,71 @@ Key risks we’d like you to explore:
 - Bricking the DAO: this upgrade should not result in a non-functional DAO that cannot execute any additional proposals.
 - Security: this upgrade should not introduce any new cost-effective attack vectors.
 
-## Lines of code
+## Files in scope
 
-| File                   | blank | comment | code |
-| :--------------------- | ----: | ------: | ---: |
-| NounsDAOLogicV2.sol    |   125 |     276 |  630 |
-| NounsDAOLogicV1.sol    |    81 |     199 |  403 |
-| NounsDAOInterfaces.sol |    66 |     164 |  210 |
-| NounsDAOProxy.sol      |    18 |      56 |   67 |
+| File                                        | blank | comment | code |
+| :------------------------------------------ | ----: | ------: | ---: |
+| contracts/governance/NounsDAOLogicV2.sol    |   125 |     276 |  630 |
+| contracts/governance/NounsDAOLogicV1.sol    |    81 |     199 |  403 |
+| contracts/governance/NounsDAOInterfaces.sol |    66 |     164 |  210 |
+| contracts/governance/NounsDAOProxy.sol      |    18 |      56 |   67 |
+| contracts/base/ERC721Checkpointable.sol     |    42 |      82 |  165 |
+| contracts/base/ERC721Enumerable.sol         |    27 |      91 |   69 |
+
+## All other source contracts (not in scope)
+
+| File                                              | blank | comment | code |
+| :------------------------------------------------ | ----: | ------: | ---: |
+| contracts/libs/Inflate.sol                        |    81 |     171 |  618 |
+| contracts/NounsArt.sol                            |    61 |     175 |  214 |
+| contracts/NounsDescriptorV2.sol                   |    56 |     213 |  201 |
+| contracts/base/ERC721.sol                         |    55 |     202 |  198 |
+| contracts/NounsDescriptor.sol                     |    51 |     140 |  160 |
+| contracts/SVGRenderer.sol                         |    29 |      47 |  154 |
+| contracts/NounsAuctionHouse.sol                   |    45 |      85 |  131 |
+| contracts/governance/NounsDAOExecutor.sol         |    33 |      28 |  128 |
+| contracts/NounsToken.sol                          |    45 |      99 |  119 |
+| contracts/libs/MultiPartRLEToSVG.sol              |    17 |      30 |  111 |
+| contracts/interfaces/INounsArt.sol                |    49 |      14 |   89 |
+| contracts/interfaces/INounsDescriptorV2.sol       |    43 |      14 |   84 |
+| contracts/test/Multicall2.sol                     |    17 |       7 |   77 |
+| contracts/governance/NounsDAOProxyV2.sol          |    19 |      58 |   67 |
+| contracts/test/WETH.sol                           |    16 |       3 |   54 |
+| contracts/interfaces/INounsDescriptor.sol         |    40 |      14 |   45 |
+| contracts/libs/SSTORE2.sol                        |    19 |      37 |   44 |
+| contracts/test/NounsTokenHarness.sol              |     8 |       1 |   40 |
+| contracts/libs/NFTDescriptor.sol                  |     8 |      21 |   38 |
+| contracts/libs/NFTDescriptorV2.sol                |     8 |      21 |   38 |
+| contracts/test/NounsDAOImmutable.sol              |     6 |       1 |   37 |
+| contracts/NounsSeeder.sol                         |     7 |      18 |   32 |
+| contracts/test/MaliciousVoter.sol                 |     6 |       1 |   29 |
+| contracts/test/NounsDAOLogicV2Harness.sol         |     4 |       1 |   27 |
+| contracts/interfaces/INounsAuctionHouse.sol       |    19 |      20 |   26 |
+| contracts/test/NounsDAOExecutorHarness.sol        |     9 |       1 |   26 |
+| contracts/interfaces/INounsToken.sol              |    23 |      14 |   25 |
+| contracts/test/NounsDAOLogicV1Harness.sol         |     4 |       1 |   23 |
+| contracts/interfaces/ISVGRenderer.sol             |     8 |      14 |   14 |
+| contracts/interfaces/INounsSeeder.sol             |     6 |      14 |   12 |
+| contracts/test/MaliciousBidder.sol                |     4 |       1 |   12 |
+| contracts/interfaces/INounsDescriptorMinimal.sol  |    13 |      20 |   11 |
+| contracts/proxies/NounsAuctionHouseProxy.sol      |     5 |      14 |    9 |
+| contracts/Inflator.sol                            |     5 |      22 |    8 |
+| contracts/interfaces/IWETH.sol                    |     4 |       1 |    6 |
+| contracts/interfaces/IInflator.sol                |     5 |      14 |    5 |
+| contracts/external/opensea/IProxyRegistry.sol     |     2 |       1 |    4 |
+| contracts/proxies/NounsAuctionHouseProxyAdmin.sol |     5 |      15 |    3 |
 
 - counted using [cloc](https://github.com/AlDanial/cloc)
+
+## Skipped tests
+
+There are 3 skipped hardhat tests it's ok to ignore for this audit:
+
+- NounsDescriptor
+  - should generate valid token uri metadata for all supported parts when data uris are enabled
+- NounsDescriptorV2
+  - should generate valid token uri metadata when data uris are enabled [ @skip-on-coverage ]
+  - should generate valid token uri metadata for all supported parts when data uris are enabled
 
 # How to get context
 
@@ -90,8 +162,8 @@ At this point you should have sufficient context to dive into V2:
 
 We'll be around the C4 Discord. Please let us know if we can help in any way!
 
-| Name       |           Discord |                                          Twitter |
-| :--------- | ----------------: | -----------------------------------------------: |
-| elad       | elad \| ⌐◨-◨#6192 |     [eladmallel](https://twitter.com/eladmallel) |
-| david      |    davidbrai#5671 |       [davidbrai](https://twitter.com/davidbrai) |
-| solimander |   solimander#7468 | [_solimander_](https://twitter.com/_solimander_) |
+| Name       |           Discord |                                          Twitter | Timezone |
+| :--------- | ----------------: | -----------------------------------------------: | -------: |
+| elad       | elad \| ⌐◨-◨#6192 |     [eladmallel](https://twitter.com/eladmallel) |    GMT-5 |
+| david      |    davidbrai#5671 |       [davidbrai](https://twitter.com/davidbrai) |    GMT+2 |
+| solimander |   solimander#7468 | [_solimander_](https://twitter.com/_solimander_) |    GMT-6 |
