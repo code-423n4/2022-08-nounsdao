@@ -39,6 +39,22 @@ forge install
 forge test -vvv --ffi
 ```
 
+#### Possible Solc error
+
+If you encounter the following error tring to build or run tests:
+
+```sh
+Solc Error: dyld[32338]: Library not loaded: '/opt/homebrew/opt/z3/lib/libz3.dylib'
+```
+
+Install the z3 library and try again. On MacOs you can run
+
+```sh
+brew install z3
+```
+
+The dependency on z3 is mentioned in [forge build docs](https://book.getfoundry.sh/reference/forge/forge-build#additional-model-checker-settings).
+
 # Audit scope
 
 The focus of this audit is on:
