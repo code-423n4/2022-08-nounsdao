@@ -48,6 +48,7 @@ The focus of this audit is on:
   - Voting gas refund ([spec](https://github.com/nounsDAO/nouns-tech/tree/main/vote-refund))
   - A fix to how `votingDelay` is used ([bug report](https://github.com/nounsDAO/nouns-diligence/blob/main/reports/proposal-58.md#major))
 - Parent contracts which hold state variables: `NounsDAOStorageV2`, `NounsDAOStorageV1Adjusted`, `NounsDAOProxyStorage` (found in the file `NounsDAOInterfaces.sol`)
+- NounsToken's functions `getPriorVotes` and `totalSupply`, which are implemented in `ERC721Checkpointable` and `ERC721Enumerable` respectively
 - The upgrade process from v1 to v2
   - The [NounsDAOLogicV1](https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV1.sol) contract for context
   - The upgrade will take place via a proposal; the proposal will include the following transactions:
@@ -69,6 +70,8 @@ Key risks we’d like you to explore:
 | contracts/governance/NounsDAOLogicV1.sol    |    81 |     199 |  403 |
 | contracts/governance/NounsDAOInterfaces.sol |    66 |     164 |  210 |
 | contracts/governance/NounsDAOProxy.sol      |    18 |      56 |   67 |
+| contracts/base/ERC721Checkpointable.sol     |    42 |      82 |  165 |
+| contracts/base/ERC721Enumerable.sol         |    27 |      91 |   69 |
 
 ## All other source contracts (not in scope)
 
@@ -78,7 +81,6 @@ Key risks we’d like you to explore:
 | contracts/NounsArt.sol                            |    61 |     175 |  214 |
 | contracts/NounsDescriptorV2.sol                   |    56 |     213 |  201 |
 | contracts/base/ERC721.sol                         |    55 |     202 |  198 |
-| contracts/base/ERC721Checkpointable.sol           |    42 |      82 |  165 |
 | contracts/NounsDescriptor.sol                     |    51 |     140 |  160 |
 | contracts/SVGRenderer.sol                         |    29 |      47 |  154 |
 | contracts/NounsAuctionHouse.sol                   |    45 |      85 |  131 |
@@ -88,7 +90,6 @@ Key risks we’d like you to explore:
 | contracts/interfaces/INounsArt.sol                |    49 |      14 |   89 |
 | contracts/interfaces/INounsDescriptorV2.sol       |    43 |      14 |   84 |
 | contracts/test/Multicall2.sol                     |    17 |       7 |   77 |
-| contracts/base/ERC721Enumerable.sol               |    27 |      91 |   69 |
 | contracts/governance/NounsDAOProxyV2.sol          |    19 |      58 |   67 |
 | contracts/test/WETH.sol                           |    16 |       3 |   54 |
 | contracts/interfaces/INounsDescriptor.sol         |    40 |      14 |   45 |
@@ -116,6 +117,16 @@ Key risks we’d like you to explore:
 | contracts/proxies/NounsAuctionHouseProxyAdmin.sol |     5 |      15 |    3 |
 
 - counted using [cloc](https://github.com/AlDanial/cloc)
+
+## Skipped tests
+
+There are 3 skipped hardhat tests it's ok to ignore for this audit:
+
+- NounsDescriptor
+  - should generate valid token uri metadata for all supported parts when data uris are enabled
+- NounsDescriptorV2
+  - should generate valid token uri metadata when data uris are enabled [ @skip-on-coverage ]
+  - should generate valid token uri metadata for all supported parts when data uris are enabled
 
 # How to get context
 
