@@ -78,6 +78,27 @@ Key risks we’d like you to explore:
 - Bricking the DAO: this upgrade should not result in a non-functional DAO that cannot execute any additional proposals.
 - Security: this upgrade should not introduce any new cost-effective attack vectors.
 
+## Clarification on getPriorVotes, votingDelay and proposalCreationBlock
+
+In castVoteInternal there’s a change that fixes how we use votingDelay such that moving forward it can be edited without impacting vote snapshots for any active proposals.
+
+Nouns DAO uses vote snapshots from the block of proposal creation. In V1 proposal creation block was calculated thus: proposal.startBlock - votingDelay in the castVoteInternal function, so if votingDelay was edited, vote counts would become inconsistent with the proposal’s intended snapshot. In V2 the fix is storing the proposals creationBlock on the proposal struct, which removes the dependency on votingDelay.
+
+What might be confusing is the function proposalCreationBlock:
+
+```
+function proposalCreationBlock(Proposal storage proposal) internal view returns (uint256) {
+    if (proposal.creationBlock == 0) {
+        return proposal.startBlock - votingDelay;
+    }
+    return proposal.creationBlock;
+}
+```
+
+This logic handles the case of proposals that were created using V1 logic, and remain active after the upgrade to V2; such proposals would not have creationBlock set, so we continue to calculate their creation block the same as V1. Based on the current DAO configuration about a week after V2 is deployed all V1 proposals should reach their final state, and from that moment on proposalCreationBlock would rely solely on proposal.creationBlock.
+
+The risky point we’re aware of is that we should not attempt to edit votingDelay during this transition week when V1 proposals are still active.
+
 ## Files in scope
 
 | File                                        | blank | comment | code |
