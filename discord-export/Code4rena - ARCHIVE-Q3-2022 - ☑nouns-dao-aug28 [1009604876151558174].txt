@@ -1,0 +1,1045 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q3-2022 / ☑nouns-dao-aug28
+==============================================================
+
+[08/17/2022 11:39 PM] kartoonjoy (pinned)
+👋 Hello and welcome to the contest channel for the $50K USDC **Nouns DAO** contest!
+
+📆 Contest opens 08/22/2022 8:00 PM (20:00 UTC) and runs through 08/27/2022 8:00 PM (20:00 UTC) (5 days).
+
+Please give a warm welcome to the Nouns DAO team, particularly @solimander, @davidbrai and@elad ⌐◨-◨, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-08-nouns-dao-contest
+
+{Embed}
+https://code4rena.com/contests/2022-08-nouns-dao-contest
+Code4rena Nouns DAO contest
+$50,000 USDC
+22 August 2022—27 August 2022
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🔥 (25) 👓 (3) 
+
+[08/18/2022 9:14 AM] kartoonjoy
+Pinned a message.
+
+
+[08/18/2022 10:02 AM] CRYP70#8985
+https://tenor.com/view/forrest-gump-hello-wave-hi-waving-gif-22571528
+
+{Embed}
+https://tenor.com/view/forrest-gump-hello-wave-hi-waving-gif-22571528
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/forrest-gump-hello-8F3F7.png
+
+{Reactions}
+hi5 (9) 
+
+[08/18/2022 10:41 AM] ch_301
+⏳
+
+
+[08/19/2022 12:39 AM] saneryee
+🧐
+
+
+[08/21/2022 4:21 PM] moonman6377
+Hey, just a heads up, I think there’s a typo, is it a 5 day contest? Cuz it says 7
+
+{Reactions}
+thankyou (2) 🦅 (2) 
+
+[08/21/2022 4:30 PM] kartoonjoy
+Pinned a message.
+
+
+[08/22/2022 7:58 PM] dannygfromnyc
+Very excited to take part in this contest. Love the project
+
+
+[08/22/2022 8:02 PM] road220
+Let's go!!! Good luck everyone!
+
+
+[08/22/2022 8:03 PM] el4d
+hi! I'm part of the sponsor team, here to support your important work 🙌
+
+{Reactions}
+hi5 (9) 🔥 
+
+[08/22/2022 8:07 PM] pwn.exe
+pretty new to code4rena
+
+
+[08/22/2022 8:07 PM] pwn.exe
+lets see what i can learn on this platform
+
+
+[08/22/2022 8:08 PM] solimander
+gm! happy to answer contest questions as they come up :noun_heart:
+
+{Reactions}
+C4Keycap 
+
+[08/22/2022 8:08 PM] pwn.exe
+morning!
+
+
+[08/22/2022 8:20 PM] Franfran#5067
+GM team !
+
+
+[08/22/2022 8:36 PM] codingnamekiki
+Love the idea of the project also the nfts are looking fresh 🔥
+
+
+[08/22/2022 8:59 PM] rokinot
+I've noticed `NounsDAOProxy.sol` is in scope, but is there any reason  `NounsDAOProxyV2.sol` is not?
+
+
+[08/22/2022 9:00 PM] minh___
+4 of the forge tests are failing for me on windows:
+`Encountered 1 failing test in test/foundry/DescriptorUpgrade.t.sol:DescriptorUpgradeTest
+[FAIL. Reason: Setup failed: Failed to execute command: program not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/DescriptorUpgradeViaProposal.t.sol:DescriptorUpgradeViaProposalTest
+[FAIL. Reason: Setup failed: Failed to execute command: program not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/NounsArt.t.sol:NounsArtTest
+[FAIL. Reason: Failed to execute command: program not found] testAddGlassesWorksWithSeveralPages() (gas: 4463)
+
+Encountered 1 failing test in test/foundry/NounsToken.t.sol:NounsTokenTest
+[FAIL. Reason: Setup failed: Failed to execute command: program not found] setUp() (gas: 0)
+`
+
+anyone else?
+
+
+[08/22/2022 9:00 PM] el4d
+did you run it with `--ffi`?
+
+
+[08/22/2022 9:00 PM] minh___
+yep
+
+
+[08/22/2022 9:01 PM] el4d
+we added ProxyV2 for forkers of the protocol, it's never used in production, since we will upgrade DAO v1 to v2 using the already-deployed original proxy
+
+{Reactions}
+👍 
+
+[08/22/2022 9:02 PM] el4d
+I've never encountered this `program not found` error
+assuming you have the latest foundry properly installed it should work fine I think
+
+
+[08/22/2022 9:03 PM] minh___
+you also working on windows?
+
+
+[08/22/2022 9:04 PM] el4d
+I'm on Mac, sorry I don't have Windows experience to help
+
+
+[08/22/2022 9:04 PM] minh___
+alright, no worries, thanks for checking in 👍
+
+
+[08/22/2022 9:06 PM] solimander
+ah, must be because `readFile` uses `cat`
+
+
+[08/22/2022 9:06 PM] minh___
+i will try it on wsl real quick
+
+
+[08/22/2022 9:11 PM] minh___
+that worked, so definitely windows specific. your guess with `cat` would make sense
+
+{Reactions}
+👍 
+
+[08/22/2022 9:24 PM] heuss
+hi guys does someone have the deployed v1 address please
+
+
+[08/22/2022 9:25 PM] el4d
+proxy https://etherscan.io/address/0x6f3E6272A167e8AcCb32072d08E0957F9c79223d#code
+logic https://etherscan.io/address/0xa43aFE317985726E4e194eb061Af77fbCb43F944#code
+
+
+[08/22/2022 9:25 PM] heuss
+Thanks man and quick question who is going to be the admin of noundaologicv2 ?
+
+
+[08/22/2022 9:26 PM] el4d
+that remains the same as it is today, since `admin` is stored on the proxy, and that would be the Executor contract
+
+
+[08/22/2022 9:26 PM] el4d
+addresses are documented here
+https://nouns.notion.site/Nouns-Protocol-32e4f0bf74fe433e927e2ea35e52a507
+
+{Embed}
+https://nouns.notion.site/Nouns-Protocol-32e4f0bf74fe433e927e2ea35e52a507
+Nouns Protocol
+Nouns is a protocol for proliferating Nouns.
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/https%253A%252F%252Fs3-us-west-2.amazonaws-ADBAA.png
+
+
+[08/22/2022 9:26 PM] heuss
+Ok thanks man
+
+
+[08/22/2022 9:27 PM] el4d
+I highly recommend reading through the `How to get context` section
+
+{Reactions}
+👍 (2) 
+
+[08/22/2022 9:27 PM] el4d
+we did our best to make sure it has everything you need 🙂
+
+{Reactions}
+thankyou 🥂 (2) 
+
+[08/22/2022 9:27 PM] heuss
+yea i forgot i could find eveyrthing there
+
+
+[08/23/2022 2:01 AM] haruxe
+whats good nouns crew
+
+
+[08/23/2022 10:59 AM] coder_rancho
+what is the difference between "NounsAuctionHouse" contract and "NounsAuctionHouseProxy" contract
+
+
+[08/23/2022 11:29 AM] davidbrai
+NounsAuctionHouseProxy is a proxy contract and NounsAuctionHouse is logic contract that the proxy point to.
+it's to enable future upgrades of the logic contract
+
+{Reactions}
+👍 
+
+[08/23/2022 11:55 AM] JohnSmith#1623
+NounsDAOLogicV1.sol is in scope, but V2 is gonna replace it.
+Should we include QA/Gas optimization findings of NounsDAOLogicV1.sol?
+Or should we analyze it just for means of safe migration?
+
+
+[08/23/2022 12:16 PM] heuss
+Since they wont use it anymore probably useless to report finding that only impact the v1
+
+
+[08/23/2022 12:18 PM] el4d
+Focus on v2 is best
+
+
+[08/23/2022 12:18 PM] el4d
+Thank you!
+
+
+[08/23/2022 12:24 PM] JohnSmith#1623
+So are all findings for NounsDAOLogicV1.sol that don't impact migration will be invalidated?
+I just don't want the situation where some did report because it is in scope, others did not, because it is not gonna be used. Everyone should be on the same page.
+
+
+[08/23/2022 12:40 PM] pfapostol
+v2 is an updated version of v1, so probably 99% of the gas/quality assurance issues of v1 are common to v2.
+
+
+[08/23/2022 12:45 PM] JohnSmith#1623
+I prefer yes/no,  not probably
+
+
+[08/23/2022 1:12 PM] dravee
+V1 is in scope so it will be rewarded (I helped with scouting the contest). Sponsor did say to focus on V2 but as the scope was already agreed on, your findings on V1 won't get invalidated.
+Also you get to look at things that could break during the update like storage etc. 🙂
+
+{Reactions}
+thankyou (2) 
+
+[08/23/2022 1:17 PM] JohnSmith#1623
+there is nothing more important than `i++`
+
+{Reactions}
+💯 (4) 
+
+[08/23/2022 1:32 PM] dravee
+There is... `++i`
+
+{Reactions}
+🤣 (2) 
+
+[08/23/2022 1:37 PM] JohnSmith#1623
+We will find and convert them all 🧛
+
+
+[08/23/2022 1:38 PM] codingnamekiki
+l guess it's my time to shine
+
+
+[08/23/2022 1:38 PM] codingnamekiki
+:chefskiss:
+
+{Reactions}
+🔥 (4) 
+
+[08/23/2022 1:43 PM] dravee
+Taken from the Foundation contest
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/unknown-6-FC8D7.png
+
+{Reactions}
+😆 (14) 🔥 (9) 🐺 (2) 
+
+[08/23/2022 2:28 PM] sm4rty_
+Custom errors 🙂
+
+{Reactions}
+😂 (7) 
+
+[08/23/2022 2:34 PM] codingnamekiki
+oh comon now, don't reveal all my VIP gas optimizations
+
+{Reactions}
+same (4) 
+
+[08/23/2022 2:34 PM] codingnamekiki
+https://tenor.com/view/tom-and-jerry-slap-slapping-butt-slap-spanking-gif-4517373
+
+{Embed}
+https://tenor.com/view/tom-and-jerry-slap-slapping-butt-slap-spanking-gif-4517373
+tom and jerry
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/tom-and-jerry-slap-4BCD7.png
+
+{Reactions}
+😂 (4) 
+
+[08/23/2022 2:36 PM] rohan16
+this guy will not let me go to starbucks
+
+
+[08/23/2022 2:37 PM] codingnamekiki
+exactly how l am supposed to buy a slice of pizza now D:
+
+
+[08/23/2022 3:12 PM] heuss
+what if we find a high bug but not in the in scope contratcs ?
+
+
+[08/23/2022 3:18 PM] 0x1f8b
+It won't be paid, don't waste your time with out of scope contracts
+
+
+[08/23/2022 3:20 PM] heuss
+thats weird xd but ok
+
+
+[08/23/2022 3:21 PM] heuss
+and if the out of scope contract bug direclty affect the in scope contract ?
+
+
+[08/23/2022 4:24 PM] haruxe
+If you find something out of scope, you can always contact the team behind the contract to let them know; but don't actively search for them
+
+{Reactions}
+💯 👆 
+
+[08/23/2022 10:33 PM] horsefacts
+https://twitter.com/eth_call/status/1562206161046507523
+
+{Embed}
+horsefacts (@eth_call)
+https://twitter.com/eth_call/status/1562206161046507523
+Live video of a @code4rena warden participating in this week’s @nounsdao contest.
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/bg9xDOj4fWhd9Pec-1E36B.jpg
+Twitter
+
+{Reactions}
+😂 (10) 👆 nice 
+
+[08/23/2022 10:33 PM] horsefacts
+(this was an amazing Nouns piñata from ETHMexico!)
+
+
+[08/24/2022 2:28 AM] kartoonjoy
+Wardens, ICYMI, there was a clarification added to the README file today.
+
+https://github.com/code-423n4/2022-08-nounsdao#clarification-on-getpriorvotes-votingdelay-and-proposalcreationblock
+
+{Embed}
+https://github.com/code-423n4/2022-08-nounsdao
+GitHub - code-423n4/2022-08-nounsdao
+Contribute to code-423n4/2022-08-nounsdao development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/f6141fe3-9cfa-40ba-9c3c-279004e9692a-401E5
+
+{Reactions}
+✅ (5) 
+
+[08/24/2022 4:39 AM] joevl
+"function doSomething() public {
+        require(msg.sender == address(this));"
+
+I saw this pattern in the Nouns DAO code. Is there any significant reason to do this rather than make the function private?
+
+
+[08/24/2022 5:36 AM] tabish.eth
+i think the call to those functions is by a transaction therefore they are required to be public
+
+
+[08/24/2022 5:53 AM] joevl
+I see. That does make sense
+
+
+[08/24/2022 11:36 AM] ladboy233
+Hello
+
+
+[08/24/2022 11:37 AM] ladboy233
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/unknown-74A8D.png
+
+
+[08/24/2022 11:37 AM] ladboy233
+Is NounsDAOProxyV2 not in scope?
+
+
+[08/24/2022 11:37 AM] ligaratus_
+clarified here:
+https://discord.com/channels/810916927919620096/1009604876151558174/1011379494608703500
+
+
+[08/24/2022 11:38 AM] ladboy233
+ok
+
+
+[08/24/2022 11:44 AM] ladboy233
+thanks.
+
+
+[08/24/2022 2:06 PM] ladboy233
+Feels good about this auditing.
+
+{Reactions}
+🤩 (2) 
+
+[08/25/2022 11:02 AM] sm4rty_
+Is there anyone from sponsor available for answering my doubt?
+
+
+[08/25/2022 12:37 PM] kartoonjoy
+@solimander, @elad ⌐◨-◨ or @Davide Silva, anyone available to assist?
+
+
+[08/25/2022 1:30 PM] el4d
+gm
+
+{Reactions}
+🔆 (5) 
+
+[08/25/2022 1:30 PM] el4d
+how can I help? would love more context please
+
+
+[08/25/2022 3:41 PM] nine_december
+gm, sent dm req!
+
+
+[08/25/2022 6:23 PM] JohnSmith#1623
+Why do we have this check `msg.sender != address(0)`?
+
+
+[08/25/2022 6:35 PM] solimander
+leftover from compound's governance contract, which nouns forked
+
+
+[08/25/2022 6:35 PM] solimander
+unnecessary, yet benign check
+
+
+[08/25/2022 6:36 PM] JohnSmith#1623
+benign, nice :chefskiss:
+
+
+[08/25/2022 6:39 PM] solimander
+unless someone finds the private key to the zero address :Smoke:
+
+
+[08/25/2022 6:40 PM] codingnamekiki
+https://tenor.com/view/critical-ops-we-do-a-little-trolling-trolling-hacking-hack-gif-20964053
+
+{Embed}
+https://tenor.com/view/critical-ops-we-do-a-little-trolling-trolling-hacking-hack-gif-20964053
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/critical-ops-we-do-a-little-trolling-9E3A4.png
+
+{Reactions}
+🤣 
+
+[08/25/2022 8:03 PM] foobar0x
+lolwhat
+
+
+[08/25/2022 8:17 PM] haruxe
+uh oh
+
+
+[08/25/2022 8:18 PM] haruxe
+dont share your crits here lil bro :Deadass:
+
+
+[08/26/2022 4:15 AM] 100proof
+I sometimes marvel out how incredibly hackable the entire Ethereum smart contract space would be if we could just do hash collisions. You could pretty much modify any storage location just by using a public `mapping` variable and passing in the right values. Thank god for Second Pre-image Resistance.
+
+
+[08/26/2022 6:30 AM] 0xpathfindr
+Question. If there is an internal function that sends ETH to an arbitrary user. Will its severity be reduced because the function is internal rather than external ?
+
+
+[08/26/2022 6:31 AM] 0xpathfindr
+And isn't it good practice for every transfer function to check if a user (e.g msg,sender ) is the intended user to send/ receive funds to/from ?
+
+
+[08/26/2022 10:17 AM] minh___
+if it cant be abused, its not relevant
+
+{Reactions}
+👍 
+
+[08/26/2022 11:43 AM] 0x1f8b
+https://polygonscan.com/address/0x0000000000000000000000000000000000000000 or a new protocol / new fork, allow to do transactions with this address
+
+{Embed}
+https://polygonscan.com/address/0x0000000000000000000000000000000000000000
+Address 0x0000000000000000000000000000000000000000 | PolygonScan
+The Address 0x0000000000000000000000000000000000000000 page allows users to view transactions, balances, token holdings and transfers of both ERC-20 and ERC-721 (NFT) tokens, and analytics.
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/PolygonScan-logo-circle-6FDB5.jpg
+
+
+[08/26/2022 12:12 PM] dravee
+That's some heavy whale 😂
+
+{Reactions}
+🤣 (2) 
+
+[08/26/2022 5:32 PM] slightscan
+Well I didn't find anything interesting. Maybe only that ERC721Checkpointable.getPriorVotes returns votes from a previous checkpoint. But since the vote count is not critical I didn't investigate more.
+
+
+[08/26/2022 11:44 PM] 100proof
+@slightscan I think that might actually be a feature.
+
+
+[08/27/2022 12:33 AM] shr1ftyy
+Hello
+
+
+[08/27/2022 12:33 AM] shr1ftyy
+So I already sent a gas report, but would like to send an updated one
+
+
+[08/27/2022 12:33 AM] shr1ftyy
+and have that take precedence over the previous one
+
+
+[08/27/2022 12:34 AM] shr1ftyy
+is there anything that I should do to make that so or do I just submit the updated one
+
+
+[08/27/2022 1:04 AM] shr1ftyy
+tried submitting but am getting this error:
+
+
+[08/27/2022 1:04 AM] shr1ftyy
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/unknown-AEE59.png
+
+
+[08/27/2022 2:22 AM] elku.cryptos
+go to contest page. see findings tab. click on what you want to edit and update it there.
+
+
+[08/27/2022 8:09 AM] shr1ftyy
+thank you!
+
+
+[08/27/2022 9:15 AM] Junnon#3182
+want to DM, ser, can one of you accept my friend req? @solimander @davidbrai @elad ⌐◨-◨
+
+
+[08/27/2022 9:30 AM] codingnamekiki
+Soli’s DMs are open tho
+
+{Reactions}
+👍 
+
+[08/27/2022 9:37 AM] davidbrai
+you can message me
+
+{Reactions}
+👍 
+
+[08/27/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Nouns DAO** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **Nouns DAO** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+🎉 (8) 🙏 (4) 
+
+[08/27/2022 8:09 PM] el4d
+Thanks everyone!!
+
+{Reactions}
+💜 (13) C4Keycap (4) 👏 (3) ethereumcolor (4) discordswivel01 (2) cyberheart (2) same (2) ✅ (2) 🇩 (2) 🇦 (2) 🇴 (2) 4739_Skeletor 
+
+[08/27/2022 8:10 PM] codingnamekiki
+@100proof hey do you mind sharing the total number of high and med submissions for the nouns contest? If l remember correctly Joy said it's fine.
+
+
+[08/27/2022 8:32 PM] 100proof
+No, I think she said that they were going to add it as part of their process. I can't do it myself...
+
+{Reactions}
+👍 (2) hi5 
+
+[08/27/2022 9:05 PM] codingnamekiki
+Oh got it thanks
+
+
+[09/11/2022 5:12 PM] R2#8087
+Hey guys! 
+How can I check contest status? Is it already judged?
+
+
+[09/12/2022 8:59 AM] thepicodes
+It's not !
+
+
+[09/24/2022 11:27 AM] Saintcode_#8823
+How is it going?
+
+{Reactions}
+☝️ (2) 
+
+[09/26/2022 7:47 AM] natzuu33
+https://tenor.com/view/stormtrooper-star-wars-stormtroopers-checking-time-checking-watch-gif-19389789
+
+{Embed}
+https://tenor.com/view/stormtrooper-star-wars-stormtroopers-checking-time-checking-watch-gif-19389789
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/stormtrooper-star-wars-28944.png
+
+
+[09/27/2022 10:34 AM] natzuu33
+https://tenor.com/view/waiting-gif-19905639
+
+{Embed}
+https://tenor.com/view/waiting-gif-19905639
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/waiting-FF189.png
+
+
+[09/27/2022 9:31 PM] itsmetechjay
+🤑 🎉 Awards for **Nouns DAO, part 1**:
+
+$10,624.98 USDC » @rbserver 
+$10,610.10 USDC » @Respx 
+$1,800.54 USDC » @Roman 
+$1,735.38 USDC » KIntern_NA (@TrungOre, @duc)
+$1,718.74 USDC » @Bernd 
+$1,718.74 USDC » @csanuragjain 
+$1,718.74 USDC » @cccz 
+$1,718.73 USDC » @zzzitron 
+$1,683.29 USDC » @bin2chen 
+$1,683.29 USDC » @IEatBabyCarrots 
+$1,683.29 USDC » @jayphbee 
+$1,197.57 USDC » @Deivitto 
+$1,124.43 USDC » @0xSmartContract 
+$1,117.27 USDC » @Django | Saloon Finance 
+$1,099.27 USDC » @code-cipher 
+$1,094.57 USDC » @Ch_301 
+$1,093.73 USDC » @TomJ 
+$509.93 USDC » @IllIllI 
+$224.81 USDC » @0xNazgul 
+$133.26 USDC » @JohnSmith 
+$122.27 USDC » mics
+$100.39 USDC » @CodingNameKiki 
+$88.34 USDC » @Dravee 
+$86.69 USDC » @JC
+$69.60 USDC » @0x1f8b 
+$69.52 USDC » @Rolezn 
+$66.52 USDC » @m_Rassska 
+$66.19 USDC » @cRat1st0s 
+$58.07 USDC » @Bnke 
+$55.52 USDC » @__141345__ 
+$55.52 USDC » @Alex The Entreprenerd 
+$55.52 USDC » @gogo 
+$55.50 USDC » @0xNineDec 
+$55.50 USDC » @Funen 
+$54.91 USDC » @thinklab 
+$54.91 USDC » @robee 
+$54.67 USDC » @ReyAdmirado 
+$54.67 USDC » @pfapostol
+$52.65 USDC » @ElKu 
+$52.65 USDC » @c3phas 
+$52.42 USDC » @ajtra 
+$52.41 USDC » @Sm4rty 
+$52.41 USDC » @EricTee 
+$52.41 USDC » @0xkatana 
+$52.36 USDC » @sikorico 
+$52.36 USDC » @olivierdem 
+$52.33 USDC » @carlitox477 
+$52.33 USDC » @saian 
+$52.33 USDC » @hyh 
+$52.33 USDC » @brgltd
+$52.33 USDC » @bobirichman7542 
+$52.33 USDC » @seyni 
+$52.13 USDC » @ladboy233小伙子 
+$52.12 USDC » @fatherOfBlocks 
+$52.12 USDC » @Prasant Gupta 
+$52.12 USDC » @ret2basic.eth 
+$52.12 USDC » @Tomo | NinjAudit 
+$52.11 USDC » @durianSausage
+
+
+[09/27/2022 9:32 PM] codingnamekiki
+💸
+
+
+[09/27/2022 9:33 PM] itsmetechjay
+🤑 🎉 Awards for** Nouns DAO, part 2**:
+
+$52.11 USDC » LeoS
+$52.11 USDC » @sryysryy 
+$52.11 USDC » @simon135 
+$52.11 USDC » GimelSec (@sces60107 | GimelSec, @rayn | GimelSec)
+$52.11 USDC » @catchup 
+$52.11 USDC » @Waze 
+$52.11 USDC » @delfin454000 
+$52.11 USDC » Guardian (@0xOwen-GuardianAudits, Green)
+$52.11 USDC » @d3e4 
+$52.11 USDC » @lukris02 
+$52.10 USDC » 0xbepresent
+$52.10 USDC » CertoraInc (@egjlmn1, @Ori Dabush, @ItayG, @shakedwinder, @RoiEvenHaim)
+$52.10 USDC » @Thunder 
+$52.10 USDC » @Rohan 
+$52.10 USDC » @rvierdiiev 
+$52.10 USDC » @0X040 
+$52.10 USDC » @rfa
+$52.10 USDC » @DimitarDimitrov 
+$52.10 USDC » @Ruhum 
+$52.10 USDC » @sach1r0 
+$52.10 USDC » @djxploit 
+$52.10 USDC » @RaymondFam 
+$52.10 USDC » @_Adam 
+$52.10 USDC » @Chom 
+$52.10 USDC » @SooYa 
+$52.10 USDC » @Bjorn_Bug 
+$52.10 USDC » @R2
+$52.10 USDC » @tnevler 
+$52.10 USDC » @0xpathfindr 
+$52.10 USDC » @Natzuu 
+$52.10 USDC » @DevABDee 
+$52.10 USDC » @Saintcode_ 
+$52.10 USDC » @rokinot 
+$52.10 USDC » @Noah3o6 
+$52.10 USDC » @wagmi 
+$38.84 USDC » @auditor0517 
+$35.45 USDC » @Jeiwan
+$35.45 USDC » @xiaoming90 
+$35.44 USDC » @0bi 
+$35.44 USDC » @0x1337 
+$35.44 USDC » @rajatbeladiya
+$35.44 USDC » @100proof  
+$35.44 USDC » @PENGUN 
+$35.44 USDC » @Rajeev | Secureum 
+$35.44 USDC » @dipp
+$35.44 USDC » @zhuXKET 
+$35.44 USDC » @Sloth  
+$35.44 USDC » @Soosh
+$35.44 USDC » @yixxas  
+$35.44 USDC » @slightscan
+$35.44 USDC » @shenwilly 
+$35.44 USDC » @p_crypt0
+$35.44 USDC » zkhorse (@karmacoma, @horsefacts)
+$35.44 USDC » @Jancem 
+$35.44 USDC » @0xmatt
+$35.44 USDC » @pashov 
+$35.44 USDC » @haruxe
+$35.44 USDC » @0xFTW 
+$35.44 USDC » @8olidity 
+$35.44 USDC » Trabajo_de_mates (@Saintcode_, @rafatatay)
+$35.44 USDC » @z3s 
+$35.44 USDC » @Throttle
+$19.23 USDC » @joestakey
+$16.97 USDC » @martin11 
+$16.97 USDC » @Junnon
+$16.97 USDC » @ch0bu
+$16.66 USDC » @samruna
+$16.66 USDC » @jag 
+$16.66 USDC » @Shishigami
+$16.66 USDC » @Ben
+$16.66 USDC » @Ignacio
+$16.66 USDC » @SaharAP 
+$16.66 USDC » @Deleted User 
+$16.66 USDC » @bulej93
+$16.66 USDC » @lucacez 
+$16.66 USDC » @exolorkistis 
+$16.66 USDC » @zishansami 
+$16.66 USDC » @Tomio 
+$16.66 USDC » @Fitraldys
+$16.66 USDC » @medikko
+$16.66 USDC » @TuckSparrow 
+$16.66 USDC » @shr1ftyy
+$16.66 USDC » @Rotcivegaf
+$16.66 USDC » @ak1
+$16.66 USDC » @karanctf
+$16.66 USDC » @shark 
+$16.66 USDC » @0xc0ffEE
+$16.66 USDC » @Amithuddar
+$16.66 USDC » @DOG 
+$16.66 USDC » @2997ms
+$16.66 USDC » @newfork01 
+$16.66 USDC » @RoiEvenHaim
+$16.66 USDC » @Polandia94 
+$16.66 USDC » @rafatatay
+$16.66 USDC » @Yiko
+$16.66 USDC » @ACai 
+$16.66 USDC » @francoHacker 
+$16.66 USDC » @Randyyy 
+$16.66 USDC » @Diraco
+$16.66 USDC » @Ignacio
+$16.66 USDC » @peritoflores
+$16.66 USDC » @a12jmx
+
+{Reactions}
+🤩 (3) 
+
+[09/27/2022 9:34 PM] bnke0x0
+https://tenor.com/view/getting-cash-get-cash-making-money-make-money-make-that-money-gif-20008860
+
+{Embed}
+https://tenor.com/view/getting-cash-get-cash-making-money-make-money-make-that-money-gif-20008860
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/getting-cash-get-cash-FDB84.png
+
+{Reactions}
+🤣 (4) 😂 
+
+[09/27/2022 9:44 PM] itsmetechjay
+🤑 🎉 Awards for **Nouns DAO, part 3**:
+
+🏁 Findings summary
+---------------------------
+High risk findings: 9 total, 1 unique
+Med risk findings: 8 total, 3 unique
+Gas optimization reports: 126
+QA reports: 117
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+*Note: If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+
+[09/28/2022 6:45 AM] Saintcode_#8823
+lmaooo
+
+
+[09/28/2022 11:06 AM] 0xmatt#3768
+https://tenor.com/view/backing-you-get-yours-danny-devito-danny-devito-gif-13052176
+
+{Embed}
+https://tenor.com/view/backing-you-get-yours-danny-devito-danny-devito-gif-13052176
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/backing-you-get-yours-9F3A8.png
+
+{Reactions}
+🤣 
+
+[09/28/2022 1:21 PM] _ieatbabies_
+Omg I got top 10 on my first audit. Feels so good. I was honestly expecting a lot less money 
+Σ(ﾟДﾟ)
+
+{Reactions}
+hi5 (8) 🎉 (3) 🏆 
+
+[09/28/2022 1:24 PM] jayphbee
+Me too, haha
+
+{Reactions}
+🫂 
+
+[09/30/2022 9:45 AM] Saintcode_#8823
+congrats
+
+{Reactions}
+chefskiss 
+
+[10/01/2022 9:43 AM] yixxas
+Hi, can i check why this issue I made https://github.com/code-423n4/2022-08-nounsdao-findings/issues/211 was moved to QA even though it appeared as a vulnerability in M-03 in the final report?  @davidbrai @gzeon
+
+{Embed}
+https://github.com/code-423n4/2022-08-nounsdao-findings/issues/211
+_setVetoer() does not use a 2 step procedure despite it being a cri...
+Lines of code https://github.com/code-423n4/2022-08-nounsdao/blob/c1c7c6201d0247f92472419ff657b570f9104565/contracts/governance/NounsDAOLogicV2.sol#L839 Vulnerability details Impact _setVetoer() is...
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/211-C541D
+
+
+[10/01/2022 11:21 AM] R2#8087
+Hi guys! 
+
+I have a question about Nouns DAO contest
+
+There is a M-3 finding: https://github.com/code-423n4/2022-08-nounsdao-findings/issues/315
+
+I'm also found it, but sent it to "QA report" and it wasn't accepted
+
+Is it correct? Or I can to appeal it?
+
+
+[10/01/2022 11:28 AM] illilli000
+once awards are announced it's too late
+
+
+[10/01/2022 11:29 AM] R2#8087
+But how could i see the results before?
+
+
+[10/01/2022 11:32 AM] R2#8087
+Can you please explain if it's possible to see the results before awards announcement?
+
+
+[10/01/2022 11:33 AM] R2#8087
+And to be able to appeal results
+
+
+[10/01/2022 11:38 AM] codingnamekiki
+only the backstage people can defend their issues, when the project is in judging phase. Am l right @IllIllI
+
+{Reactions}
+👍 
+
+[10/01/2022 11:39 AM] R2#8087
+So I had no ability to see result before and to appeal it? 
+So can I do it now, when I know results?
+
+
+[10/01/2022 11:40 AM] codingnamekiki
+Like he said, after the awards are announced, you can’t do anything
+
+
+[10/01/2022 11:41 AM] R2#8087
+So it's never possible to appeal results? Because I see results only after awards are announced
+
+
+[10/01/2022 11:44 AM] illilli000
+you need to have backstage: https://docs.code4rena.com/roles/certified-contributors/backstage-wardens
+
+{Reactions}
+👍 
+
+[10/01/2022 11:50 AM] R2#8087
+Thanks guys! Will try to become backstage warden
+
+{Reactions}
+👍 (3) 
+
+[10/01/2022 1:43 PM] _ieatbabies_
+How do you get to be certified
+
+
+[10/01/2022 2:23 PM] illilli000
+https://docs.code4rena.com/roles/certified-contributors
+
+{Reactions}
+💯 
+
+[10/01/2022 5:56 PM] franco_btc
+my first reward jajajaj thanks
+
+{Reactions}
+🔥 (2) 
+
+[10/01/2022 11:14 PM] ladboy233
+Well, let me also apply for the backstage role then.
+
+
+[10/02/2022 7:04 PM] d3e4
+R2’s report is somewhat different, but considering others' were approved for simply suggesting a zero-address check (rather than two-step), yours should perhaps be considered a duplicate as well. I fear they simply missed it, as you submitted it as a QA.
+
+yixxas’ report, however, is spot on compared to the accepted issue, but was submitted as a high-risk.
+
+This must suck, as the payout was quite high.
+
+My gas- and QA-reports also seem to have been graded strangely low as well in this contest, compared to some others ranking around mine that I looked at.
+
+Is this something that can be resolved in the judging process? It seems at least that missing duplicates should be something that everyone should be able to dispute before the results are locked. Duplicates are easily assessed but easily missed by the judge.
+
+
+[10/02/2022 9:53 PM] ladboy233
+@kartoonjoy | C4 🎇🎇 @Jay | C4 good point lol
+
+
+[10/03/2022 10:16 AM] cloudellie
+If you have suggestions for improving the judging process, we welcome them. Best place to make them visible to judges and C4 staff is our discussion forum on Github: https://github.com/code-423n4/org/discussions
+
+{Embed}
+https://github.com/code-423n4/org/discussions
+Discussions · code-423n4/org
+Code4rena Governance and Discussion. Contribute to code-423n4/org development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2022 - ☑nouns-dao-aug28 [1009604876151558174].txt_Files/org-CCBED
+
+{Reactions}
+❤️ 
+
+[10/03/2022 10:50 AM] ladboy233
+ok
+
+
+[10/05/2022 12:36 PM] natzuu33
+Have awards been sent?
+
+
+[10/05/2022 12:38 PM] itsmetechjay
+Awards have not been sent yet.
+
+
+[10/05/2022 12:38 PM] natzuu33
+Thanks
+
+
+[10/07/2022 11:03 AM] Tomo | NinjAudit#7394
+@Jay | C4 When do you plan to send the award money for this contest and olympus?
+
+
+[10/07/2022 11:43 AM] cloudellie
+Awards are typically sent within a week of the announcement.
+
+{Reactions}
+👍 C4Keycap (2) 
+
+[10/11/2022 2:33 PM] 2997ms
+It has been two weeks after the announcement? @CloudEllie | C4
+
+
+[10/14/2022 7:04 AM] Tomo | NinjAudit#7394
+@2997ms 
+https://discord.com/channels/810916927919620096/810929015509483554/1029873070728556664
+
+
+[10/14/2022 8:37 AM] jayphbee
+🎉
+
+
+==============================================================
+Exported 158 message(s)
+==============================================================
